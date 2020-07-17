@@ -23,3 +23,19 @@ Day 4
 Test out your project to make sure it works as intended. Do any last minute touch ups to it if needed.
 (optional) Pair with someone to practice speaking about your website and going over what you did to create it.
 (optional) Add some styling using a styling framework such as materialize css.
+
+----------------------------------------------------------------------------------------------------
+
+Requirements for Sinatra Project
+
+
+-Build an MVC Sinatra Application
+-Use Activerecord with Sinatra
+-Use Multiple Models
+-Use at least one has_many relationship / belongs_to relationship
+-Must have user accounts. The user that created a given piece of content should be the only person who can modify that content
+-Must have the abilty to create, read, update and destroy any instance of the resource that belongs to a user.
+-Ensure that any instance of the resource that belongs to a user can be edited or deleted only by that user.
+-You should also have validations for user input to ensure that bad data isn't added to the database. The fields in your signup form should be required and the user attribute that is used to login a user should be a unique value in the DB before creating the user.
+-(optional) Try to make multiple git commits. (A commit for every feature you add). It’s good practice!
+

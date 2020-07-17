@@ -1,0 +1,68 @@
+<nav>
+<div><a href="/">Home</a></div>
+<div><a href="/encounters">Dashboard</a></div>
+<div><a href=" ">Logout</a></div>
+</nav>
+
+<br>
+
+<h1>Create a New Encounter</h1>
+<br>
+<br>
+
+<form action="/encounters" method="POST">
+    <div>
+        <label for="title">Title: </label>
+        <input type="text" name="title" id="title">
+    </div>
+    <br>
+    <div>
+        <label for="description">Description: </label>
+        <textarea name="description" id="description" cols="50" rows="3"></textarea>
+    </div>
+    <br>
+    <div>
+        <label for="urgency">Urgency: </label>
+    </div>
+    
+    <div>
+        <input type="radio" name="urgency" id="stat">
+        <label for="stat">STAT</label>
+
+        <input type="radio" name="urgency" id="rush">
+        <label for="rush">Rush</label>
+
+        <input type="radio" name="urgency" id="casual">
+        <label for="casual">Casual</label>
+    </div>
+    <br>
+    <div>
+        <label for="dept">Department: </label>
+    </div>
+
+    <div>
+        <label for="it">IT</label>
+        <input type="radio" name="dept" id="it">
+
+        <label for="hr">HR</label>
+        <input type="radio" name="dept" id="hr">
+
+        <label for="management">Management</label>
+        <input type="radio" name="dept" id="management">
+
+        <label for="surgical">Surgical</label>
+        <input type="radio" name="dept" id="surgical">
+
+        <label for="cytology">Cytology</label>
+        <input type="radio" name="dept" id="cytology">
+
+        <label for="histology">Histology</label>
+        <input type="radio" name="dept" id="histology">
+    </div>
+    <br>
+    <br>
+    <div>
+        <input type="submit" value="-Create Encounter-">
+        <input type="submit" value="-Cancel-">
+    </div>
+</form>

@@ -1,0 +1,86 @@
+<nav>
+<div><a href="/">Home</a></div>
+<div><a href="/encounters">Dashboard</a></div>
+<div><a href="/encounters/new">Create New Encounter</a></div>
+<div><a href=" ">Logout</a></div>
+</nav>
+
+<br>
+<br>
+
+<h1>Edit Encounter</h1>
+
+<form action="/encounters/<%= @encounter.id %>" method="POST">
+   <input type="hidden" name="_method" value="patch">
+
+   <br>
+    
+    <div>
+        <label for="title">Title: </label>
+        <input type="text" name="encounter[title]" id="title" value="<%=@encounter.title%>">
+    </div>
+
+    <br>
+
+    <div>
+        <label for="description">Description: </label>
+        <textarea name="encounter[description]" id="description" cols= "50" rows="3" value="<%=@encounter.description%>">
+            <%=@encounter.description%>
+        </textarea>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="urgency">Urgency: </label>
+    </div>
+    <div>
+        <input type="radio" name="encounter[urgency]" id="stat" value="STAT"<%= 'checked' if @encounter.urgency == "STAT"%>>
+        <label for="stat">STAT</label>
+
+        <input type="radio" name="encounter[urgency]" id="rush" value="Rush"<%= 'checked' if @encounter.urgency == "Rush"%>>
+        <label for="rush">Rush</label>
+
+        <input type="radio" name="encounter[urgency]" id="casual" value="Casual"<%= 'checked' if @encounter.urgency == "Casual"%>>
+        <label for="casual">Casual</label>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="dept">Department: </label>
+    </div>
+    <div>
+        <input type="radio" name="encounter[dept]" id="it" value="IT"<%= 'checked' if @encounter.dept == "IT"%>>
+        <label for="it">IT</label>
+
+        <input type="radio" name="encounter[dept]" id="hr" value="HR"<%= 'checked' if @encounter.dept% == "HR">>
+        <label for="hr">HR</label>
+
+        <input type="radio" name="encounter[dept]" id="management" value="Management"<%= 'checked' if @encounter.dept == "Management"%>>
+        <label for="management">Management</label>
+
+        <input type="radio" name="encounter[dept]" id="surgical" value="Surgical"<%= 'checked' if @encounter.dept == "Surgical"%>>
+        <label for="surgical">Surgical</label>
+
+        <input type="radio" name="encounter[dept]" id="cytology" value="Cytology"<%= 'checked' if @encounter.dept == "Cytology"%>>
+        <label for="cytology">Cytology</label>
+
+        <input type="radio" name="encounter[dept]" id="histology" value="Histology"<%= 'checked' if @encounter.dept == "Histology"%>>
+        <label for="histology">Histology</label>
+    </div>
+
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+    <div>
+        <input type="submit" value="-Save Encounter-">
+    </div>
+
+</form>
+
+
+

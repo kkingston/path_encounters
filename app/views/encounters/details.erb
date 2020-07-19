@@ -13,3 +13,5 @@
     <p> Urgency: <%= @encounter.urgency %></p>
     <p> Department: <%= @encounter.dept %></p>
     <p>Status: <%= @encounter.status ? "Complete" : "Not Complete" %></p>
+
+<a href="/encounters/<%= @encounter.id %>/edit"><input type="button" value="-Edit Encounter-"></a>

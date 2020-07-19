@@ -1,3 +1,9 @@
+TO DO:
+
+Error page....
+
+
+
 Day 1
 <!-- DONE--Come up with an idea for your project.
 DONE--Create your Sinatra Project.

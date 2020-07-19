@@ -7,60 +7,67 @@
 <br>
 
 <h1>Create a New Encounter</h1>
+
 <br>
 <br>
 
 <form action="/encounters" method="POST">
     <div>
         <label for="title">Title: </label>
-        <input type="text" name="title" id="title">
+        <input type="text" name="encounter[title]" id="title" value="<%@encounter.title%>">
     </div>
+
     <br>
+
     <div>
         <label for="description">Description: </label>
-        <textarea name="description" id="description" cols="50" rows="3"></textarea>
+        <textarea name="encounter[description]" id="description" cols="50" rows="3" value="<%@encounter.description%>"></textarea>
     </div>
+
     <br>
+
     <div>
         <label for="urgency">Urgency: </label>
     </div>
-    
     <div>
-        <input type="radio" name="urgency" id="stat">
+        <input type="radio" name="encounter[urgency]" id="stat" value="STAT">
         <label for="stat">STAT</label>
 
-        <input type="radio" name="urgency" id="rush">
+        <input type="radio" name="encounter[urgency]" id="rush" value="Rush">
         <label for="rush">Rush</label>
 
-        <input type="radio" name="urgency" id="casual">
+        <input type="radio" name="encounter[urgency]" id="casual" value="Casual">
         <label for="casual">Casual</label>
     </div>
+
     <br>
+
     <div>
         <label for="dept">Department: </label>
     </div>
-
     <div>
+        <input type="radio" name="encounter[dept]" id="it" value="IT">
         <label for="it">IT</label>
-        <input type="radio" name="dept" id="it">
 
+        <input type="radio" name="encounter[dept]" id="hr" value="HR">
         <label for="hr">HR</label>
-        <input type="radio" name="dept" id="hr">
 
+        <input type="radio" name="encounter[dept]" id="management" value="Management">
         <label for="management">Management</label>
-        <input type="radio" name="dept" id="management">
 
+        <input type="radio" name="encounter[dept]" id="surgical" value="Surgical">
         <label for="surgical">Surgical</label>
-        <input type="radio" name="dept" id="surgical">
 
+        <input type="radio" name="encounter[dept]" id="cytology" value="Cytology">
         <label for="cytology">Cytology</label>
-        <input type="radio" name="dept" id="cytology">
 
+        <input type="radio" name="encounter[dept]" id="histology" value="Histology">
         <label for="histology">Histology</label>
-        <input type="radio" name="dept" id="histology">
     </div>
+
     <br>
     <br>
+
     <div>
         <input type="submit" value="-Create Encounter-">
         <input type="submit" value="-Cancel-">

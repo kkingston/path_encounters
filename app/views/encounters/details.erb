@@ -15,3 +15,8 @@
     <p>Status: <%= @encounter.status ? "Complete" : "Not Complete" %></p>
 
 <a href="/encounters/<%= @encounter.id %>/edit"><input type="button" value="-Edit Encounter-"></a>
+
+<form action="/encounters/<%=@encounter.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="-Delete Encounter-">
+</form>

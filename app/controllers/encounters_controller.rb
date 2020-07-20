@@ -15,21 +15,11 @@ class EncountersController < ApplicationController
 
     # CREATE Route
     post '/encounters' do
-        @encounter = Encounter.new(params)
+        @encounter = Encounter.new(params[:encounter])
         if @encounter.save
-            redirect to '/encounters'
+            redirect '/encounters'
         else
             erb :'encounters/new'
-        end
-    end
-
-    # READ Route
-    get '/encounters/:id' do
-        set_encounter
-        if @encounter 
-        erb :'encounters/details'
-        else 
-            redirect '/encounters'
         end
     end
 
@@ -39,6 +29,17 @@ class EncountersController < ApplicationController
         erb :'/encounters/edit'
     end
 
+      # READ Route
+    get '/encounters/:id' do
+        set_encounter
+        if @encounter 
+            erb :'encounters/details'
+        else 
+            redirect '/encounters'
+        end
+    end
+
+    # UPDATE Route
     patch '/encounters/:id' do
         set_encounter
         if @encounter.update(
@@ -55,6 +56,12 @@ class EncountersController < ApplicationController
     end 
 
     # DESTROY Route
+    delete '/encounters/:id' do
+        set_encounter
+        @encounter.destroy 
+        redirect '/encounters'
+    end
+
 
     private 
         def set_encounter
@@ -63,15 +70,3 @@ class EncountersController < ApplicationController
     
 end
 
-
-# <div>
-# <label for="status">Status: </label>
-# </div>
-# <div>
-# <input type="radio" name="encounter[status]" id="complete" value="Complete"<%= 'checked' if @encounter.status == "Complete"%>>
-# <label for="complete">Complete</label>
-
-# <input type="radio" name="encounter[status]" id="not_complete" value="Not Complete"<%= 'checked' if @encounter.status == "Not Complete"%>>
-# <label for="complete">Not Complete</label>
-
-# </div>

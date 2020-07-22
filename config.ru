@@ -6,6 +6,6 @@ end
 
 use Rack::MethodOverride
 
-use UserController
+use UsersController
 use EncountersController
 run ApplicationController

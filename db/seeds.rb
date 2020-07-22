@@ -6,5 +6,9 @@
 #     status: [true, false].sample )
 # end
 
+Encounter.all.each do |encounter|
+    encounter.update(user_id: [1..5].sample)
+end 
+
 
 

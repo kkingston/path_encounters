@@ -12,20 +12,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="wrapper">
-      <nav>
-        <ul>
+    <nav class="navbar">
+      <div class="navbutton">
+        <a href="#">Menu</a>
+        <div class="dropdown">
           <% unless logged_in? %>
-            <li><a href="/signup">Create Account</a></li>
-            <li><a href="/login">Login</a></li>
+            <li class="navbutton"><a href="/">Home</a></li>
+            <li class="navbutton"><a href="/signup">Create Account</a></li>
+            <li class="navbutton"><a href="/login">Login</a></li>
           <% else %>
-            <li><%=current_user.user_name%></li>
-            <li><a href="/logout">Logout</a></li>
+            <li class="navbutton">Welcome, <%= current_user.user_name%>!</li>
+            <li class="navbutton"><a href="/encounters">My Encounters</a></li>
+            <li class="navbutton"><a href="/encounters/new">Open New Encounter</a></li>
+            <li class="navbutton"><a href="/logout">Logout</a></li>
           <% end %>
-        </ul>
-      </nav>
+        </div>
+      </div>
+    </nav>
 
         <%= yield %>
 

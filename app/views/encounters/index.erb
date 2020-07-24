@@ -4,15 +4,9 @@
 <div><a href="/encounters/new">Create New Encounter</a></div>
 <div><a href="/">Logout</a></div>
 </nav>-->
-
-<br>
-
 <h1> Harborview PathEncounters </h1>
-<h2>Kayla's Dashboard-----------------------------------OPEN NEW</h2> 
 
 <% @encounters.each do |encounter|%>
-    <br>
     <p><a href="/encounters/<%=encounter.id%>">Title: <%= encounter.title %></a></p>
     <p> Status: <%= encounter.status ? "Complete" : "Not Complete" %></p>
-    <p>------</p>
 <% end %>

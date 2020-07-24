@@ -9,13 +9,14 @@
   html, body {
     height: 100%;
     width: 100%;
+    font-family: 'Montserrat', sans-serif;
   }
 
-  /* --- Welcome Page Styles --- */
+  /* --- Welcome/login Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color: rgb(232, 255, 237);
     color: #333;
-    font-family: Sans-Serif;
+    text-decoration: none;
     line-height: 18px;
   }
 
@@ -30,56 +31,126 @@
     width: 85%;
   }
 
+  .navbutton:hover .dropdown {
+    display: block;
+  }
+
+  nav {
+    color: #333;
+  }
+
+  .navbutton a {  
+    text-decoration:none; 
+    text-align: left;
+    color: #333;
+    display: block; 
+    transition:0.2s all linear;
+  }
+
+  .navbutton {
+    display: inline-block;
+    width: 200px;
+    position: relative;
+    color: #333;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding-top: 20px;
+    text-align: center;
+  }
+
   h1 {
     font-size: 36px;
-    line-height: 54px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  
   }
 
   h2 {
-    border-bottom: 2px solid #ccc;
+    margin-top: 20px;
     font-size: 24px;
+    text-align: center;
     line-height: 36px;
     margin-bottom: 16px;
   }
 
-  h3 {
-    font-size: 18px;
-    line-height: 36px;
+  .loginbox {
+    padding: 20px;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
   }
 
-  p {
-    margin-bottom: 18px;
+  .photo {
+    background-image: url(images/cytology.jpeg);
+    min-height: 300px;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
   }
 
-  .main {
-    overflow: hidden;
+  .box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 
-  .content {
-    float: left;
-    width: 60%; /* 480px / 800px */
+  .loginbutton {
+    width: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    position: relative;
   }
 
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
+  .loginbutton:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
   }
 
-  .sidebar ul {
-    font-size: 14px;
+  .newaccountnote {
+    text-align: center;
   }
 
-  .branding {
-    clear: both;
+  .newaccountnote a {
+    text-decoration: none;
+    color: #333;
   }
 
   footer.branding {
     border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
+  }
+
+  /*-- Details Style Pages --*/
+
+  .detailsbox {
+    text-align: left;
+    line-height: 35px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    padding: 25px 20px 25px 20px;
+    margin-bottom: 50px;
+  }
+
+  h1.detailsbox {
+    text-align: left;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
   }
 }
 
@@ -91,25 +162,10 @@
     width: auto;
   }
 
-  .content, .sidebar {
-    float: none;
-    width: 100%;
-  }
-
   .sidebar {
     background: transparent;
     border: none;
     border-top: 2px solid #ccc;
     padding: 0;
-  }
-
-  h1 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  h2 {
-    font-size: 18px;
-    line-height: 24px;
   }
 }

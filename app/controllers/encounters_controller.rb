@@ -3,7 +3,7 @@ class EncountersController < ApplicationController
 
     # READ Route
     get '/encounters' do 
-        @encounters = Encounter.all 
+        @encounters = current_user.encounters
         erb :'/encounters/index'
     end 
 

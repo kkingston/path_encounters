@@ -5,7 +5,10 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    @user = User.new(user_name: params[:user_name], password: params[:password])
+    @user = User.new(
+      user_name: params[:user][:user_name], 
+      password: params[:user][:password]
+    )
     if @user.save
       session[:user_id] = @user.id
       redirect '/encounters'

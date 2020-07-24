@@ -4,19 +4,27 @@
 <div><a href="/encounters/new">Create New Encounter</a></div>
 <div><a href=" ">Logout</a></div>
 </nav>-->
-<br>
+
 
 <h1><%=@encounter.title %></h1>
-    <p>--------------------------------------------</p>
-    <br>
+ 
+<div class="detailsbox">
     <p> Description: <%= @encounter.description %></p>
     <p> Urgency: <%= @encounter.urgency %></p>
     <p> Department: <%= @encounter.dept %></p>
     <p>Status: <%= @encounter.status ? "Complete" : "Not Complete" %></p>
-
-<a href="/encounters/<%= @encounter.id %>/edit"><input type="button" value="-Edit Encounter-"></a>
-
-<form action="/encounters/<%=@encounter.id%>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="-Delete Encounter-">
-</form>
+    
+    <form action="/encounters/<%=@encounter.id%>" method="post">
+        <div class="buttons">
+            <div class="editbutton">
+                <a href="/encounters/<%= @encounter.id %>/edit">
+                    <input type="button" value="-Edit Encounter-">
+                </a>
+            </div>
+            <div class="deletebutton">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" value="-Delete Encounter-">
+            </div>
+        </div>
+    </form>
+</div>

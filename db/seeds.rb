@@ -7,7 +7,7 @@
 # end
 
 Encounter.all.each do |encounter|
-    encounter.update(user_id: [1..5].sample)
+    encounter.update(user_id: [1..10].sample)
 end 
 
 

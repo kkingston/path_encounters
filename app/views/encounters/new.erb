@@ -3,73 +3,76 @@
 <div><a href="/encounters">Dashboard</a></div>
 <div><a href=" ">Logout</a></div>
 </nav>-->
-
-<br>
-
-<h1>Create a New Encounter</h1>
-
-<br>
-<br>
-
 <form action="/encounters" method="POST">
-    <div>
-        <label for="title">Title: </label>
-        <input type="text" name="encounter[title]" id="title" value="<%@encounter.title%>">
-    </div>
+    <div class="newencounterform"> 
 
-    <br>
+        <div class="newencountertitle">
+            <h1>Create a New Encounter</h1>
+        </div>
+        
+        <div class="buttonbox">
+            <label for="title">Title: </label>
+            <input type="text" name="encounter[title]" id="title" value="<%@encounter.title%>">
+        </div>
 
-    <div>
-        <label for="description">Description: </label>
-        <textarea name="encounter[description]" id="description" cols="50" rows="3" value="<%@encounter.description%>"></textarea>
-    </div>
+    
 
-    <br>
+        <div class="descriptionwrapper">
+            <div class="descriptionbox">
+                <label for="description">Description: </label>
+            </div>
 
-    <div>
-        <label for="urgency">Urgency: </label>
-    </div>
-    <div>
-        <input type="radio" name="encounter[urgency]" id="stat" value="STAT">
-        <label for="stat">STAT</label>
+            <div class="descriptionbox">
+                <textarea name="encounter[description]" id="description" cols="50" rows="3" value="<%@encounter.description%>"></textarea>
+            </div>
+        </div>
 
-        <input type="radio" name="encounter[urgency]" id="rush" value="Rush">
-        <label for="rush">Rush</label>
+        <div class="buttonbox">
+            <div>
+                <label for="urgency">Urgency: </label>
+            </div>
 
-        <input type="radio" name="encounter[urgency]" id="casual" value="Casual">
-        <label for="casual">Casual</label>
-    </div>
+            <div>
+                <input type="radio" name="encounter[urgency]" id="stat" value="STAT">
+                <label for="stat">STAT</label>
 
-    <br>
+                <input type="radio" name="encounter[urgency]" id="rush" value="Rush">
+                <label for="rush">Rush</label>
 
-    <div>
-        <label for="dept">Department: </label>
-    </div>
-    <div>
-        <input type="radio" name="encounter[dept]" id="it" value="IT">
-        <label for="it">IT</label>
+                <input type="radio" name="encounter[urgency]" id="casual" value="Casual">
+                <label for="casual">Casual</label>
+            </div>
+        </div>
 
-        <input type="radio" name="encounter[dept]" id="hr" value="HR">
-        <label for="hr">HR</label>
+        <div class="buttonbox">
+            <div>
+                <label for="dept">Department: </label>
+            </div>
 
-        <input type="radio" name="encounter[dept]" id="management" value="Management">
-        <label for="management">Management</label>
+            <div>
+                <input type="radio" name="encounter[dept]" id="it" value="IT">
+                <label for="it">IT</label>
 
-        <input type="radio" name="encounter[dept]" id="surgical" value="Surgical">
-        <label for="surgical">Surgical</label>
+                <input type="radio" name="encounter[dept]" id="hr" value="HR">
+                <label for="hr">HR</label>
 
-        <input type="radio" name="encounter[dept]" id="cytology" value="Cytology">
-        <label for="cytology">Cytology</label>
+                <input type="radio" name="encounter[dept]" id="management" value="Management">
+                <label for="management">Management</label>
 
-        <input type="radio" name="encounter[dept]" id="histology" value="Histology">
-        <label for="histology">Histology</label>
-    </div>
+                <input type="radio" name="encounter[dept]" id="surgical" value="Surgical">
+                <label for="surgical">Surgical</label>
 
-    <br>
-    <br>
+                <input type="radio" name="encounter[dept]" id="cytology" value="Cytology">
+                <label for="cytology">Cytology</label>
 
-    <div>
-        <input type="submit" value="-Create Encounter-">
-        <input type="submit" value="-Cancel-">
+                <input type="radio" name="encounter[dept]" id="histology" value="Histology">
+                <label for="histology">Histology</label>
+            </div>
+        </div>
+
+        <div class="buttonbox">
+            <input type="submit" value="-Create Encounter-">
+            <input type="submit" value="-Cancel-">
+        </div>
     </div>
 </form>

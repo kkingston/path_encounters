@@ -1,18 +1,26 @@
-<h1>Create Account</h1>
-
-<br>
-<br>
-
 <form action="/signup" method="post">
-  <div>
-    <label for="user_name">Username:</label>
-    <input type="text" name="user[user_name]" id="user_name">
-  </div>
+  <div class="signupwrapper">
 
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" name="user[password]" id="password">
-  </div>
+    <div class="signuptitle">
+      <h1>Create Account</h1>
+    </div>
+    
+    <div class="signupbox">
+      <label for="user_name">Username:</label>
+      <input type="text" name="user[user_name]" id="user_name">
+    </div>
+    
+    <div class="signupbox">
+      <label for="password">Password:</label>
+      <input type="password" name="user[password]" id="password">
+    </div>
+    
+    <div class="signupbutton">
+      <input type="submit" value="-Create Account-">
+    </div>
 
-  <input type="submit" value="-Create Account-">
+    <div class="loginnote">
+      <p>If you already have an account, login <a href="/signup">HERE!</a></p>
+    </div>
+  </div>
 </form>

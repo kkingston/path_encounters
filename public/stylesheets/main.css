@@ -1,5 +1,5 @@
 @media screen {
-  /* --- Reset Styles --- */
+  /* --- All Styles --- */
   * {
     list-style: none;
     margin: 0;
@@ -12,7 +12,6 @@
     font-family: 'Montserrat', sans-serif;
   }
 
-  /* --- Welcome/login Page Styles --- */
   body {
     background-color: rgb(232, 255, 237);
     color: #333;
@@ -29,7 +28,18 @@
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+  } 
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
+
+  a:hover {
+    color: rgba(0,0,0,.3);
+  }
+
+  /* -- Navbar --*/
 
   .navbutton:hover .dropdown {
     display: block;
@@ -40,18 +50,30 @@
   }
 
   .navbutton a {  
-    text-decoration:none; 
-    text-align: left;
+    text-decoration: none; 
+    text-align: right;
     color: #333;
     display: block; 
-    transition:0.2s all linear;
+    transition: 0.2s all linear;
+    }
+  
+  .navbutton {
+    width: 200px;
+    position: relative;
+    color: #333;
+    float: right;
   }
 
-  .navbutton {
+  .navusername {
     display: inline-block;
     width: 200px;
     position: relative;
     color: #333;
+    text-align: right;
+  }
+
+  .menu {
+    margin-top: 10px;
   }
 
   .dropdown {
@@ -59,8 +81,13 @@
     position: absolute;
     z-index: 1;
     padding-top: 20px;
-    text-align: center;
   }
+
+  .dropdown a:hover {
+    color: rgba(0,0,0,.3);
+  }
+
+  /* --- Welcome Page Styles --- */
 
   h1 {
     font-size: 36px;
@@ -68,9 +95,10 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    margin-top: 30px;
-  
+    margin-top: 30px;  
   }
+
+  /* All...?? ^^^^^^^ */
 
   h2 {
     margin-top: 20px;
@@ -80,29 +108,50 @@
     margin-bottom: 16px;
   }
 
-  .loginbox {
-    padding: 20px;
+  .homeboxwrapper {
     max-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 100px;
+    max-height: 300px;
+    margin: 100px auto;
     box-shadow: 0 0 10px rgba(0,0,0,.3);
+    padding: 40px 30px;
   }
 
-  .photo {
-    background-image: url(images/cytology.jpeg);
-    min-height: 300px;
-    width: 50%;
-    background-size: cover;
-    background-position: center;
+  .homebox {
+    text-align: center;
+    margin: 10px;
+  }
+
+  /* --- Login Styles --- */
+
+  .loginbox {
+    max-width: 250px;
+    max-height: 300px;
+    margin: 100px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    padding: 40px 30px;
+  }
+
+  .logintitle {
+    margin-bottom: 50px;
   }
 
   .box {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 15px;
     text-align: center;
+  }
+
+  .newaccountnote {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .newaccountnote a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  .newaccountnote a:hover {
+    color: rgba(0,0,0,.3);
   }
 
   .loginbutton {
@@ -118,20 +167,22 @@
     box-shadow: 0 0 5px rgba(0,0,0,.3);
   }
 
-  .newaccountnote {
-    text-align: center;
-  }
-
-  .newaccountnote a {
-    text-decoration: none;
-    color: #333;
-  }
-
   footer.branding {
     border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
   }
+
+  /*-- Encounters Page --*/
+
+  .encounter {
+    margin: 40px 50px;
+  }
+
+  .encounterheader {
+    border-bottom: solid thin #333;
+    margin-top: 55px;
+    }
 
   /*-- Details Style Pages --*/
 
@@ -152,6 +203,76 @@
     justify-content: space-around;
     width: 300px;
   }
+}
+
+/* --- Create Account --- */
+
+.signupwrapper {
+  max-width: 350px;
+  max-height: 300px;
+  margin: 100px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  padding: 40px 0px;
+}
+
+.signuptitle {
+  margin: 30px auto 40px auto;
+  max-width: 300px;
+}
+
+.signupbox {
+  margin: 15px auto;
+  text-align: center;
+  max-width: 250px;
+}
+
+.signupbutton {
+  margin: 30px auto 20px auto;
+  text-align: center;
+  max-width: 250px;
+}
+
+.loginnote {
+  text-align: center;
+  margin: 40px auto 20px auto;
+  max-width: 250px;
+}
+
+.loginnote a {
+  text-decoration: none;
+  color: #333;
+}
+
+.loginnote a:hover {
+  color: rgba(0,0,0,.3);
+}
+
+/* --- New Encounter --- */
+
+.newencounterform {
+ 
+  margin: 100px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  padding: 40px 0px;
+  max-width: 550px;
+}
+
+.newencountertitle {
+  max-width: 500px;
+  text-align: center;
+  margin: 0px auto 25px auto;
+}
+
+.descriptionwrapper {
+  margin: 15px auto;
+  text-align: left;
+  max-width: 250px;
+}
+
+.buttonbox {
+  margin: 15px auto;
+  text-align: left;
+  max-width: 250px;
 }
 
 @media screen and (max-width: 600px) {

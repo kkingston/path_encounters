@@ -9,7 +9,8 @@ class EncountersController < ApplicationController
 
     # CREATE Route
     get '/encounters/new' do
-        @encounter = Encounter.new
+        @encounter = Encounter.new(title: params[:title], description: params[:description], urgency: params[:urgency], 
+        dept: params[:dept], status: params[:status])
         erb :'encounters/new'
     end
 

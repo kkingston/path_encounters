@@ -16,23 +16,30 @@
   </head>
   <body>
     <div class="wrapper">
-    <nav class="navbar">
-      <div class="navbutton">
-        <a href="#">Menu</a>
-        <div class="dropdown">
-          <% unless logged_in? %>
-            <li class="navbutton"><a href="/">Home</a></li>
-            <li class="navbutton"><a href="/signup">Create Account</a></li>
-            <li class="navbutton"><a href="/login">Login</a></li>
-          <% else %>
-            <li class="navbutton">Welcome, <%= current_user.user_name%>!</li>
-            <li class="navbutton"><a href="/encounters">My Encounters</a></li>
-            <li class="navbutton"><a href="/encounters/new">Open New Encounter</a></li>
-            <li class="navbutton"><a href="/logout">Logout</a></li>
-          <% end %>
+      <nav class="navbar">
+
+        <div class="encounterheader">
+          <h1> Harborview PathEncounters </h1>
         </div>
-      </div>
-    </nav>
+
+        <div class="menu">
+          <div class="navbutton">
+            <a href="#">Menu</a>
+            <div class="dropdown">
+              <% unless logged_in? %>
+                <li class="navbutton"><a href="/">Home</a></li>
+                <li class="navbutton"><a href="/signup">Create Account</a></li>
+                <li class="navbutton"><a href="/login">Login</a></li>
+              <% else %>
+                <li class="navusername">Welcome, <%= current_user.user_name%>!</li>
+                <li class="navbutton"><a href="/encounters">My Encounters</a></li>
+                <li class="navbutton"><a href="/encounters/new">Open New Encounter</a></li>
+                <li class="navbutton"><a href="/logout">Logout</a></li>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </nav>
 
         <%= yield %>
 

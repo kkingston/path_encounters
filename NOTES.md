@@ -8,9 +8,9 @@ Day 1
 <!-- DONE--Come up with an idea for your project.
 DONE--Create your Sinatra Project.
 DONE--Create your repo on github and connect the two together. (Use your google skills if you forgot how to do this!)
-DONE--(Optional) Create a NOTES.md, this file will be used to brainstorm on how things will be associated, the different routes, and anything you would want to write for notes. -->
-Create your user model / controller and wire it up with being able to sign up, log in, and log out.
-<!-- DONE--Make sure bcrypt is added to the gemfile, if it’s not add it and bundle install and use bcrypt as you had learned in the lessons for user authentication and password encryption. -->
+DONE--(Optional) Create a NOTES.md, this file will be used to brainstorm on how things will be associated, the different routes, and anything you would want to write for notes. 
+DONE--Create your user model / controller and wire it up with being able to sign up, log in, and log out.
+ DONE--Make sure bcrypt is added to the gemfile, if it’s not add it and bundle install and use bcrypt as you had learned in the lessons for user authentication and password encryption. -->
 
 
 Day 2

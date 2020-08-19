@@ -9,14 +9,12 @@ class EncountersController < ApplicationController
 
     # CREATE Route
     get '/encounters/new' do
-        @encounter = Encounter.new(title: params[:title], description: params[:description], urgency: params[:urgency], 
-        dept: params[:dept], status: params[:status])
         erb :'encounters/new'
     end
 
     # CREATE Route
     post '/encounters' do
-        @encounter = Encounter.new(params[:encounter])
+        @encounter = current_user.encounters.build(params[:encounter])
         if @encounter.save
             redirect '/encounters'
         else
@@ -27,13 +25,17 @@ class EncountersController < ApplicationController
     # UPDATE Route
     get '/encounters/:id/edit' do
         set_encounter
-        erb :'/encounters/edit'
+        if current_user == @encounter.user 
+            erb :'/encounters/edit'
+        else
+            redirect '/encounters'
+        end
     end
 
       # READ Route
     get '/encounters/:id' do
         set_encounter
-        if @encounter 
+        if current_user == @encounter.user
             erb :'encounters/details'
         else 
             redirect '/encounters'
@@ -43,7 +45,7 @@ class EncountersController < ApplicationController
     # UPDATE Route
     patch '/encounters/:id' do
         set_encounter
-        if @encounter.update(
+        if current_user == @encounter.user && @encounter.update(
                     title: params[:encounter][:title],
                     description: params[:encounter][:description],
                     urgency: params[:encounter][:urgency],
@@ -52,15 +54,19 @@ class EncountersController < ApplicationController
                 )
             redirect "/encounters/#{@encounter.id}"
         else 
-            erb :'todos/edit'
+            erb :'encounters/edit'
         end
     end 
 
     # DESTROY Route
     delete '/encounters/:id' do
         set_encounter
-        @encounter.destroy 
-        redirect '/encounters'
+        if current_user == @encounter.user
+            @encounter.destroy 
+            redirect '/encounters'
+        else 
+            erb: :'/encounters/details'
+        end
     end
 
 

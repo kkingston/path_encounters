@@ -12,7 +12,7 @@
         
         <div class="buttonbox">
             <label for="title">Title: </label>
-            <input type="text" name="encounter[title]" id="title" value="<%@encounter.title%>">
+            <input type="text" name="encounter[title]" id="title">
         </div>
 
     
@@ -23,11 +23,11 @@
             </div>
 
             <div class="descriptionbox">
-                <textarea name="encounter[description]" id="description" cols="50" rows="3" value="<%@encounter.description%>"></textarea>
+                <textarea name="encounter[description]" id="description" cols="50" rows="3"></textarea>
             </div>
         </div>
 
-        <div class="buttonbox">
+        <div class="radiobutton">
             <div>
                 <label for="urgency">Urgency: </label>
             </div>
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div class="buttonbox">
+        <div class="radiobutton">
             <div>
                 <label for="dept">Department: </label>
             </div>
@@ -72,7 +72,12 @@
 
         <div class="buttonbox">
             <input type="submit" value="-Create Encounter-">
-            <input type="submit" value="-Cancel-">
         </div>
+
+        <form action="/encounters" method="get">
+            <div class="cancelbutton">
+                <input type="submit" value=" -Cancel- ">
+            </div>
+        </form>       
     </div>
 </form>
